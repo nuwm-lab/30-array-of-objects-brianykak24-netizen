@@ -11,6 +11,7 @@ namespace LabWork
     class Result
     { 
     // TODO: do it !
+    // 123
     }
     
     class Program

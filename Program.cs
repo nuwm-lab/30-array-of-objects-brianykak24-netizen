@@ -12,7 +12,7 @@ namespace LabWork
     { 
     // TODO: do it !
     // 123
-    // nuwm
+    // nuwm2
     }
     
     class Program

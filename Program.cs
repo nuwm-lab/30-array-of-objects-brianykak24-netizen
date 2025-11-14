@@ -9,6 +9,7 @@ namespace LabWork
             VectorsList vectorsList = new VectorsList(5);
 
             Console.WriteLine("Vectors in the list:");
+
             Console.WriteLine(vectorsList.ToString());
 
             Console.WriteLine("Vectoe with the largest length");

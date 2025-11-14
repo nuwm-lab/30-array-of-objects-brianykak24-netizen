@@ -2,25 +2,20 @@
 
 namespace LabWork
 {
-    // Даний проект є шаблоном для виконання лабораторних робіт
-    // з курсу "Об'єктно-орієнтоване програмування та патерни проектування"
-    // Необхідно змінювати і дописувати код лише в цьому проекті
-    // Відео-інструкції щодо роботи з github можна переглянути 
-    // за посиланням https://www.youtube.com/@ViktorZhukovskyy/videos 
-
-    class Result
-    { 
-    // TODO: do it !
-    // 123
-    // nuwm2
-    }
-    
     class Program
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine("Hello World!");
+            VectorsList vectorsList = new VectorsList(5);
+
+            Console.WriteLine("Vectors in the list:");
+            Console.WriteLine(vectorsList.ToString());
+
+            Console.WriteLine("Vectoe with the largest length");
+            NormalVector largestVector = vectorsList.GetVectorWithTheLargestLength();
+            Console.WriteLine(largestVector.ToString());
+
+
         }
     }
 }

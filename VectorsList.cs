@@ -8,59 +8,66 @@ namespace LabWork
 {
     public class VectorsList
     {
-        public List<NormalVector> vectors;
+        private readonly NormalVector[] vectors;
         public VectorsList()
         {
-            vectors = new List<NormalVector>();
+            vectors = new NormalVector[0];
         }
 
-        //Creates constructor that initializes the list with vectors using consturtor of class NormalVector with random data
         public VectorsList(int numberOfVectors)
         {
-            vectors = new List<NormalVector>();
+            vectors = new NormalVector[numberOfVectors];
             Random rand = new Random();
             for (int i = 0; i < numberOfVectors; i++)
             {
-                int x = rand.Next(-10, 11);
-                int y = rand.Next(-10, 11);
-                int z = rand.Next(-10, 11);
-                vectors.Add(new NormalVector(x, y, z));
+                vectors[i] = new NormalVector(rand.Next(0, 10), rand.Next(0, 10), rand.Next(0, 10));
             }
         }
 
         public void AddVector(NormalVector vector)
         {
-            vectors.Add(vector);
+            vectors.Append(vector);
         }
 
-        public void AddListofVectors(List<NormalVector> list)
+        public void AddRange(List<NormalVector> list)
         {
-            vectors.AddRange(list);
-        }
-
-        public void RemoveVector(NormalVector vector)
-        {
-            vectors.Remove(vector);
-        }
-
-        public void ClearList()
-        {
-            vectors.Clear();
+            foreach (var vector in list)
+            {
+                vectors.Append(vector);
+            }
         }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            foreach (var vector in vectors)
+            for (int i = 0; i < vectors.Length; i++)
             {
-                sb.AppendLine(vector.ToString());
+                sb.AppendLine(vectors[i].ToString());
             }
             return sb.ToString();
         }
 
         public NormalVector GetVectorWithTheLargestLength()
         {
-            return vectors.OrderByDescending(v => v.GetLength()).First();
+            try
+            {
+
+                if (vectors.Length != 0)
+                {
+
+                }
+                int tmp = 0;
+                var value = vectors[0].GetLength();
+                for (int i = 0; i < vectors.Length; i++)
+                {
+                    if (value > vectors[i].GetLength()) tmp = i;
+                }
+                return vectors[tmp];
+            }
+            catch
+            {
+                throw new InvalidOperationException("The list is empty");
+            }
         }
 
 

@@ -10,10 +10,9 @@ namespace LabWork
 
             Console.WriteLine("Vectors in the list:");
 
-
             Console.WriteLine(vectorsList.ToString());
 
-            Console.WriteLine("Vectoe with the largest length");
+            Console.WriteLine("Vector with the largest length");
             NormalVector largestVector = vectorsList.GetVectorWithTheLargestLength();
             Console.WriteLine(largestVector.ToString());
 

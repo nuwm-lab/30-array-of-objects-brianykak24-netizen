@@ -20,9 +20,7 @@ namespace LabWork
 
         public override string ToString()
         {
-            if(this != null)
             return $"Normal Vector: ({X};{Y};{Z})";
-            else return "Vector is null";
         }
 
         public double GetLength()

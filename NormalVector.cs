@@ -8,24 +8,26 @@ namespace LabWork
 {
     public class NormalVector
     {
-        public int x { get; }
-        public int y { get; }
-        public int z { get; }
+        public int X { get; }
+        public int Y { get; }
+        public int Z { get; }
         public NormalVector(int x, int y, int z)
         {
-            this.x = x;
-            this.y = y;
-            this.z = z;
+            this.X = x;
+            this.Y = y;
+            this.Z = z;
         }
 
         public override string ToString()
         {
-            return $"Normal Vector: ({x};{y};{z})";
+            if(this != null)
+            return $"Normal Vector: ({X};{Y};{Z})";
+            else return "Vector is null";
         }
 
         public double GetLength()
         {
-            return Math.Sqrt(x * x + y * y + z * z);
+            return Math.Sqrt(X * X + Y * Y + Z * Z);
         }
 
 

@@ -53,7 +53,7 @@ namespace LabWork
 
         public override string ToString()
         {
-            if(vectors == null)
+            if(vectors.Count == 0)
             {
                 return "Vectors list is empty.";
             }

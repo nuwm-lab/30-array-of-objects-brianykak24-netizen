@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace LabWork
 {
@@ -17,7 +15,7 @@ namespace LabWork
         //Creates constructor that initializes the list with vectors using consturtor of class NormalVector with random data
         public VectorsList(int numberOfVectors)
         {
-            _vectors = new NormalVector[5];
+            _vectors = new NormalVector[numberOfVectors];
             Random rand = new Random();
             for (int i = 0; i < numberOfVectors; i++)
             {

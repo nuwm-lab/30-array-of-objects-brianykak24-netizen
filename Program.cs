@@ -6,7 +6,9 @@ namespace LabWork
     {
         static void Main(string[] args)
         {
-            VectorsList vectorsList = new VectorsList(5);
+            int size = 0;
+            Console.Write("Enter size of array: "); size = Convert.ToInt32(Console.ReadLine());
+            VectorsList vectorsList = new VectorsList(size);
 
             Console.WriteLine("Vectors in the list:");
 
@@ -14,7 +16,7 @@ namespace LabWork
 
             Console.WriteLine("Vector with the largest length");
             NormalVector largestVector = vectorsList.GetVectorWithTheLargestLength();
-            Console.WriteLine(largestVector.ToString());
+            if(largestVector != null) Console.WriteLine(largestVector.ToString());
 
 
         }

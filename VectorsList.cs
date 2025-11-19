@@ -8,7 +8,10 @@ namespace LabWork
 {
     public class VectorsList
     {
-        public List<NormalVector> vectors;
+        //I used public List<NormalVector> instead of array,
+        //because i consider my decision is the way making container flexible.
+        //Array is not for this case, because its size is fixed.
+        private List<NormalVector> vectors;
         public VectorsList()
         {
             vectors = new List<NormalVector>();
@@ -60,6 +63,7 @@ namespace LabWork
 
         public NormalVector GetVectorWithTheLargestLength()
         {
+            if (vectors.Count == 0) return null;
             return vectors.OrderByDescending(v => v.GetLength()).First();
         }
 

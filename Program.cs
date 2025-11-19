@@ -10,9 +10,9 @@ namespace LabWork
             try
             {
                 Console.Write("Enter size of array: "); size = Convert.ToInt32(Console.ReadLine());
-                if (size == 0)
+                if (size <= 0)
                 {
-                    throw new Exception("Size of array cannot be zero.");
+                    throw new Exception("Size of array cannot be zero or less.");
                 }
             }
             catch(Exception ex)

@@ -36,7 +36,7 @@ namespace LabWork
             vectors.Add(vector);
         }
 
-        public void AddListofVectors(List<NormalVector> list)
+        public void AddVectorsRange(List<NormalVector> list)
         {
             vectors.AddRange(list);
         }
@@ -46,13 +46,17 @@ namespace LabWork
             vectors.Remove(vector);
         }
 
-        public void ClearList()
+        public void Clear()
         {
             vectors.Clear();
         }
 
         public override string ToString()
         {
+            if(vectors == null)
+            {
+                return "Vectors list is empty.";
+            }
             StringBuilder sb = new StringBuilder();
             foreach (var vector in vectors)
             {
@@ -64,7 +68,7 @@ namespace LabWork
         public NormalVector GetVectorWithTheLargestLength()
         {
             if (vectors.Count == 0) return null;
-            return vectors.OrderByDescending(v => v.GetLength()).First();
+            return vectors.MaxBy(x => x.GetLength());
         }
 
 

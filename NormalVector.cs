@@ -8,7 +8,9 @@ namespace LabWork
 {
     public class NormalVector
     {
-        private int x, y, z;
+        public int x { get; }
+        public int y { get; }
+        public int z { get; }
         public NormalVector(int x, int y, int z)
         {
             this.x = x;
@@ -26,9 +28,6 @@ namespace LabWork
             return Math.Sqrt(x * x + y * y + z * z);
         }
 
-        public int GetX() {return x;}
-        public int GetY() { return y; }
-        public int GetZ() { return z; }
 
     }
 }

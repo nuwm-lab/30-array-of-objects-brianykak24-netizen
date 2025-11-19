@@ -10,6 +10,7 @@ namespace LabWork
 
             Console.WriteLine("Vectors in the list:");
 
+
             Console.WriteLine(vectorsList.ToString());
 
             Console.WriteLine("Vectoe with the largest length");

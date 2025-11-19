@@ -2,23 +2,36 @@
 
 namespace LabWork
 {
-    // Даний проект є шаблоном для виконання лабораторних робіт
-    // з курсу "Об'єктно-орієнтоване програмування та патерни проектування"
-    // Необхідно змінювати і дописувати код лише в цьому проекті
-    // Відео-інструкції щодо роботи з github можна переглянути 
-    // за посиланням https://www.youtube.com/@ViktorZhukovskyy/videos 
-
-    class Result
-    { 
-    // TODO: do it !
-    }
-    
     class Program
     {
         static void Main(string[] args)
         {
-            
-            Console.WriteLine("Hello World!");
+            int size = 0;
+            try
+            {
+                Console.Write("Enter size of array: "); size = Convert.ToInt32(Console.ReadLine());
+                if (size <= 0)
+                {
+                    throw new Exception("Size of array cannot be zero or less.");
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return;
+            }
+
+            VectorsList vectorsList = new VectorsList(size);
+
+            Console.WriteLine("Vectors in the list:");
+
+            Console.WriteLine(vectorsList.ToString());
+
+            Console.WriteLine("Vector with the largest length");
+            NormalVector largestVector = vectorsList.GetVectorWithTheLargestLength();
+            if (largestVector != null) Console.WriteLine(largestVector.ToString());
+
+
         }
     }
 }
